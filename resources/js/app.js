@@ -18,7 +18,7 @@ let app_data = [],
   formatedDates = [];
 
 // GET USERS COUNTRY CODE
-fetch("https://api.ipgeolocation.io/ipgeo?apiKey=14c7928d2aef416287e034ee91cd360d")
+fetch(`${process.env.COVID_API_KEY}`)
   .then((res) => {
     return res.json();
   })
@@ -53,7 +53,7 @@ function fetchData(country) {
 
   const api_fetch = async (country) => {
     await fetch(
-      "http://api.covid19api.com/total/country/" + country + "/status/confirmed",
+      "https://api.covid19api.com/total/country/" + country + "/status/confirmed",
       requestOptions
     )
       .then((res) => {
@@ -67,7 +67,7 @@ function fetchData(country) {
       });
 
     await fetch(
-      "http://api.covid19api.com/total/country/" + country + "/status/recovered",
+      "https://api.covid19api.com/total/country/" + country + "/status/recovered",
       requestOptions
     )
       .then((res) => {
@@ -80,7 +80,7 @@ function fetchData(country) {
       });
 
     await fetch(
-      "http://api.covid19api.com/total/country/" + country + "/status/deaths",
+      "https://api.covid19api.com/total/country/" + country + "/status/deaths",
       requestOptions
     )
       .then((res) => {
