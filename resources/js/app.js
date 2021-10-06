@@ -18,7 +18,7 @@ let app_data = [],
   formatedDates = [];
 
 // GET USERS COUNTRY CODE
-fetch(`${process.env.COVID_API_KEY}`)
+fetch("https://api.ipgeolocation.io/ipgeo?apiKey=14c7928d2aef416287e034ee91cd360d")
   .then((res) => {
     return res.json();
   })
